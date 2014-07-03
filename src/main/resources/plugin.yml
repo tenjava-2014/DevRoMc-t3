@@ -1,0 +1,3 @@
+name: DevRoMc-t3
+main: com.tenjava.entries.DevRoMc.t3.TenJava
+version: '${project.version}'
