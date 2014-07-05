@@ -1,3 +1,4 @@
 name: DevRoMc-t3
 main: com.tenjava.entries.DevRoMc.t3.TenJava
+author: DevRosemberg
 version: '${project.version}'
