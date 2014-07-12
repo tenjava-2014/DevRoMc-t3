@@ -9,12 +9,5 @@ import org.bukkit.event.Listener;
  * Programmed for the DevRoMc-t3 project.
  */
 public abstract class BaseEvent implements Listener {
-
-    public boolean isRunning = false;
-
-    public abstract void onStart();
-
-    public abstract void onEnd();
-
-    public abstract String getName();
+    public abstract void activate();
 }

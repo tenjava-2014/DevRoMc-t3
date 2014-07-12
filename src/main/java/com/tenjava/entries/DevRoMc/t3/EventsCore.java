@@ -13,8 +13,8 @@ public class EventsCore extends JavaPlugin {
 
         EventManager.getInstance();
         EventManager.getInstance().registerEvents(
-                new ChickenRain(),
-                new SheepPartyEvent()
+                new WildfireEvent(),
+                new MeteoriteEvent()
         );
     }
 

@@ -8,19 +8,9 @@ import com.tenjava.entries.DevRoMc.t3.events.BaseEvent;
  * Creation Date: 12, 07, 2014
  * Programmed for the DevRoMc-t3 project.
  */
-public class SwapEvent extends BaseEvent {
+public class TsunamiEvent extends BaseEvent {
     @Override
-    public void onStart() {
+    public void activate() {
 
-    }
-
-    @Override
-    public void onEnd() {
-
-    }
-
-    @Override
-    public String getName() {
-        return "Swap";
     }
 }

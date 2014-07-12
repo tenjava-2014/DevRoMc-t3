@@ -19,7 +19,8 @@ public class MathUtil {
         return random.nextInt(a);
     }
 
-    public static boolean hasFinished(long from, long required) {
-        return System.currentTimeMillis() - from > required;
+    public static double r(double a) {
+        int ret = r((int) a);
+        return ret;
     }
 }

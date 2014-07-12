@@ -1,12 +1,8 @@
 package com.tenjava.entries.DevRoMc.t3.events;
 
 import com.tenjava.entries.DevRoMc.t3.EventsCore;
-import com.tenjava.entries.DevRoMc.t3.events.event.ChickenRain;
-import com.tenjava.entries.DevRoMc.t3.utils.ColorUtil;
 import com.tenjava.entries.DevRoMc.t3.utils.MathUtil;
-import com.tenjava.entries.DevRoMc.t3.utils.MessagesUtil;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.event.HandlerList;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -21,6 +17,7 @@ import java.util.List;
  */
 public class EventManager {
     public List<BaseEvent> events = new ArrayList<BaseEvent>();
+    private BaseEvent lastevent = null;
 
     private static EventManager instance;
 
@@ -42,7 +39,15 @@ public class EventManager {
     }
 
     public BaseEvent getRandomEvent() {
-        return events.get(MathUtil.r(events.size()));
+        BaseEvent event = events.get(MathUtil.r(events.size()));
+
+        if (events.size() > 1) {
+            while (event == lastevent) {
+                event = events.get(MathUtil.r(events.size()));
+            }
+        }
+
+        return event;
     }
 
     public void registerEvent(BaseEvent event) {
@@ -56,29 +61,8 @@ public class EventManager {
     }
 
     public void startEvent(final BaseEvent event) {
-        if (!event.isRunning) {
+            lastevent = event;
             EventsCore.getInstance().getServer().getPluginManager().registerEvents(event, EventsCore.getInstance());
-            event.isRunning = true;
-            event.onStart();
-
-            MessagesUtil.broadcast("The event " + event.getName() + " has started!");
-
-            new BukkitRunnable() {
-                @Override
-                public void run() {
-                   endEvent(event);
-                }
-            }.runTaskLater(EventsCore.getInstance(), 600L);
-        }
-    }
-
-    public void endEvent(BaseEvent event) {
-        if (event.isRunning) {
-            event.isRunning = false;
-            event.onEnd();
-
-            MessagesUtil.broadcast("The event " + event.getName() + " has ended. A new event will start in 30 Seconds!");
-            HandlerList.unregisterAll(event);
-        }
+            event.activate();
     }
 }
