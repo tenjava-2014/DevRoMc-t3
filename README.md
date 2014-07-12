@@ -34,6 +34,7 @@ Usage
 Screenshots
 -----
 
+The meteors
 ![meteor](http://gyazo.com/287bd60615a5d5a3cff65d06d466409c.png)
 
 <!-- Hi, DevRoMc! This is the default README for every ten.java submission. -->
