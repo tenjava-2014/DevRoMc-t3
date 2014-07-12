@@ -1,4 +1,4 @@
-name: DevRoMc-t3
-main: com.tenjava.entries.DevRoMc.t3.TenJava
+name: Events
+main: com.tenjava.entries.DevRoMc.t3.EventsCore
 author: DevRosemberg
 version: '${project.version}'
