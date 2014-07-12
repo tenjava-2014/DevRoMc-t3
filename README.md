@@ -34,7 +34,7 @@ Usage
 Screenshots
 -----
 
-[![meteor](http://gyazo.com/287bd60615a5d5a3cff65d06d466409c.png)]
+![meteor](http://gyazo.com/287bd60615a5d5a3cff65d06d466409c.png)
 
 <!-- Hi, DevRoMc! This is the default README for every ten.java submission. -->
 <!-- We encourage you to edit this README with some information about your submission – keep in mind you'll be scored on documentation! -->
